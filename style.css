@@ -23,7 +23,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: "Manrope", sans-serif;
+	font-family: "Source Sans 3", sans-serif;
 	line-height: 1.6;
 	color: var(--text);
 	background:
@@ -104,7 +104,7 @@ body {
 }
 
 .logo {
-	font-family: "Sora", sans-serif;
+	font-family: "Merriweather", serif;
 	font-weight: 800;
 	letter-spacing: 0.02em;
 	color: var(--text);
@@ -171,7 +171,7 @@ section {
 h1,
 h2,
 h3 {
-	font-family: "Sora", sans-serif;
+	font-family: "Merriweather", serif;
 	line-height: 1.12;
 	margin-top: 0;
 }
@@ -359,7 +359,7 @@ h3 {
 
 .stat-grid strong {
 	display: block;
-	font-family: "Sora", sans-serif;
+	font-family: "Merriweather", serif;
 	font-size: 1.55rem;
 	margin-bottom: 0.2rem;
 }
@@ -491,7 +491,7 @@ h3 {
 }
 
 .mini-card strong {
-	font-family: "Sora", sans-serif;
+	font-family: "Merriweather", serif;
 	font-size: 1rem;
 }
 
