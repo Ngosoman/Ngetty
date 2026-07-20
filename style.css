@@ -722,7 +722,7 @@ h3 {
 
 	.hero {
 		min-height: auto;
-		padding-top: 1.5rem;
+		padding-top: 1.25rem;
 	}
 
 	.hero-panel {
@@ -730,7 +730,7 @@ h3 {
 	}
 
 	.profile-card {
-		width: min(100%, 560px);
+		width: min(100%, 520px);
 	}
 
 	.stat-grid,
@@ -740,6 +740,46 @@ h3 {
 
 	.cv-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.hero-text {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 900px) {
+	section {
+		padding: 2.5rem 0;
+	}
+
+	.hero {
+		gap: 1.1rem;
+	}
+
+	.hero-text {
+		font-size: 0.98rem;
+	}
+
+	.stat-grid,
+	.mini-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.profile-card,
+	.contact-card,
+	.glass-card,
+	.timeline-item {
+		padding: 1rem;
+	}
+
+	.profile-mark {
+		width: 74px;
+		height: 74px;
+		font-size: 1.4rem;
+	}
+
+	.hero-meta {
+		gap: 0.55rem;
 	}
 }
 
