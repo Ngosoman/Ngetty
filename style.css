@@ -543,6 +543,115 @@ h3 {
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.cv-page {
+	min-height: 100vh;
+	padding: 2rem 0 3rem;
+}
+
+.cv-shell {
+	width: var(--container);
+	margin: 0 auto;
+	padding: 1.5rem;
+	border-radius: 28px;
+	background: linear-gradient(160deg, rgba(18, 30, 41, 0.94), rgba(10, 18, 25, 0.9));
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow);
+}
+
+.cv-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-header h1 {
+	margin-bottom: 0.3rem;
+	font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.cv-header p {
+	margin: 0;
+	color: var(--muted);
+}
+
+.cv-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.cv-grid {
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.cv-section {
+	padding: 1.25rem;
+	border-radius: 22px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cv-section h2 {
+	font-size: 1.35rem;
+	margin-bottom: 0.85rem;
+}
+
+.cv-summary {
+	font-size: 1rem;
+	color: #d6e1e6;
+}
+
+.cv-list {
+	margin: 0;
+	padding-left: 1.1rem;
+	color: #d6e1e6;
+}
+
+.cv-list li + li {
+	margin-top: 0.45rem;
+}
+
+.cv-stack {
+	display: grid;
+	gap: 0.85rem;
+}
+
+.cv-entry {
+	padding: 0.95rem;
+	border-radius: 18px;
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cv-entry strong {
+	display: block;
+	margin-bottom: 0.2rem;
+}
+
+.cv-entry span {
+	color: var(--muted);
+	font-size: 0.95rem;
+}
+
+.cv-contact {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.cv-contact a,
+.cv-contact span {
+	color: var(--text);
+	text-decoration: none;
+	font-weight: 700;
+}
+
 .reveal {
 	opacity: 0;
 	transform: translateY(24px);
@@ -604,6 +713,14 @@ h3 {
 	.stat-grid,
 	.mini-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.cv-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cv-shell {
+		padding: 1rem;
 	}
 
 	.contact-card {
