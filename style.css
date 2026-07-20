@@ -19,12 +19,14 @@
 
 html {
 	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
 	margin: 0;
 	font-family: "Source Sans 3", sans-serif;
 	line-height: 1.6;
+	font-size: 1rem;
 	color: var(--text);
 	background:
 		radial-gradient(circle at 18% 12%, rgba(212, 166, 42, 0.18), transparent 28%),
@@ -84,6 +86,7 @@ body {
 .container {
 	width: var(--container);
 	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 .site-header {
@@ -147,13 +150,13 @@ main {
 }
 
 section {
-	padding: 4.5rem 0;
+	padding: clamp(3rem, 5vw, 4.5rem) 0;
 }
 
 .hero {
 	display: grid;
 	grid-template-columns: 1.05fr 0.95fr;
-	gap: 2rem;
+	gap: clamp(1.25rem, 2vw, 2rem);
 	align-items: center;
 	min-height: calc(100vh - 84px);
 	padding-top: 2rem;
@@ -192,7 +195,7 @@ h3 {
 }
 
 .hero-text {
-	max-width: 58ch;
+	max-width: 60ch;
 	color: #cad8df;
 	font-size: 1.05rem;
 }
@@ -271,8 +274,8 @@ h3 {
 }
 
 .profile-card {
-	width: min(480px, 100%);
-	padding: 1.5rem;
+	width: min(100%, 480px);
+	padding: clamp(1.15rem, 1.8vw, 1.5rem);
 	border-radius: 28px;
 	position: relative;
 	overflow: hidden;
@@ -549,7 +552,7 @@ h3 {
 }
 
 .cv-shell {
-	width: var(--container);
+	width: min(var(--container), 100%);
 	margin: 0 auto;
 	padding: 1.5rem;
 	border-radius: 28px;
@@ -663,7 +666,54 @@ h3 {
 	transform: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
+	:root {
+		--container: min(1040px, 94vw);
+	}
+
+	section {
+		padding: 3.5rem 0;
+	}
+
+	.hero {
+		gap: 1.4rem;
+		min-height: 76vh;
+	}
+
+	h1 {
+		font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+	}
+
+	h2 {
+		font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+	}
+
+	.hero-text {
+		font-size: 1rem;
+		max-width: 54ch;
+	}
+
+	.profile-card {
+		width: min(100%, 440px);
+		padding: 1.25rem;
+	}
+
+	.glass-card,
+	.timeline-item,
+	.contact-card {
+		padding: 1.2rem;
+	}
+
+	.cv-shell {
+		padding: 1.25rem;
+	}
+
+	.cv-grid {
+		grid-template-columns: 1.1fr 0.9fr;
+	}
+}
+
+@media (max-width: 1120px) {
 	.hero,
 	.two-up,
 	.contact-grid {
@@ -672,7 +722,24 @@ h3 {
 
 	.hero {
 		min-height: auto;
-		padding-top: 2rem;
+		padding-top: 1.5rem;
+	}
+
+	.hero-panel {
+		justify-content: flex-start;
+	}
+
+	.profile-card {
+		width: min(100%, 560px);
+	}
+
+	.stat-grid,
+	.mini-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.cv-grid {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -707,7 +774,7 @@ h3 {
 	}
 
 	section {
-		padding: 3.4rem 0;
+		padding: 2.8rem 0;
 	}
 
 	.stat-grid,
@@ -725,6 +792,47 @@ h3 {
 
 	.contact-card {
 		padding: 1.4rem;
+	}
+
+	.profile-mark {
+		width: 72px;
+		height: 72px;
+		font-size: 1.35rem;
+	}
+
+	h1 {
+		font-size: clamp(2rem, 10vw, 2.7rem);
+	}
+
+	h2 {
+		font-size: clamp(1.4rem, 7vw, 1.9rem);
+	}
+
+	.hero-text {
+		font-size: 1rem;
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	.hero-cta,
+	.contact-actions {
+		flex-direction: column;
+	}
+
+	.meta-chip,
+	.pill-list span {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.hero-meta {
+		width: 100%;
+	}
+
+	.container {
+		padding: 0 0.9rem;
 	}
 }
 
