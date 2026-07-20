@@ -342,6 +342,51 @@ h2 {
 	backdrop-filter: blur(14px);
 }
 
+.social-links {
+	margin-top: 1.2rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.65rem;
+}
+
+.social-link {
+	text-decoration: none;
+	color: var(--text);
+	border: 1px solid rgba(255, 255, 255, 0.24);
+	background: rgba(255, 255, 255, 0.06);
+	padding: 0.5rem 0.9rem;
+	border-radius: 999px;
+	font-weight: 700;
+	font-size: 0.9rem;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.social-link.whatsapp:hover,
+.social-link.whatsapp:focus-visible {
+	border-color: rgba(37, 211, 102, 0.8);
+}
+
+.social-link.instagram:hover,
+.social-link.instagram:focus-visible {
+	border-color: rgba(225, 48, 108, 0.8);
+}
+
+.social-link.facebook:hover,
+.social-link.facebook:focus-visible {
+	border-color: rgba(24, 119, 242, 0.85);
+}
+
+.social-link.linkedin:hover,
+.social-link.linkedin:focus-visible {
+	border-color: rgba(10, 102, 194, 0.9);
+}
+
 .site-footer {
 	border-top: 1px solid rgba(255, 255, 255, 0.12);
 	padding: 1rem 0;
