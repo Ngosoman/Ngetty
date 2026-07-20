@@ -3,9 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Martin Ngeti | Portfolio</title>
+    <meta name="description" content="Sample portfolio website for Martin Ngeti with modern design and interactive sections.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="nav container">
+            <a href="#home" class="logo">Martin Ngeti</a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero container reveal">
+            <div class="hero-content">
+                <p class="eyebrow">Creative Portfolio Sample</p>
+                <h1>Building digital experiences with style, strategy, and speed.</h1>
+                <p class="hero-text">
+                    Hi, I am Martin Ngeti. I design and build web experiences that are clean, performant,
+                    and focused on real business results.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Let’s Work Together</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="photo-frame">
+                    <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+                        alt="Placeholder portrait for Martin Ngeti"
+                        id="profileImage"
+                    >
+                    <div class="photo-note">
+                        Placeholder image. Replace with Martin's real photo later.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about container reveal">
+            <div class="section-heading">
+                <p class="eyebrow">About</p>
+                <h2>Crafting meaningful products through design and development</h2>
+            </div>
+            <div class="about-grid">
+                <article class="glass-card">
+                    <h3>Who I Am</h3>
+                    <p>
+                        I am a developer and creative problem solver who combines visual design principles
+                        with robust front-end engineering to bring ideas to life.
+                    </p>
+                </article>
+                <article class="glass-card">
+                    <h3>What I Focus On</h3>
+                    <p>
+                        Modern interfaces, responsive architecture, accessibility, and smooth interactions
+                        that keep users engaged across devices.
+                    </p>
+                </article>
+                <article class="glass-card">
+                    <h3>My Goal</h3>
+                    <p>
+                        To help brands and businesses stand out with websites that are elegant,
+                        high-performing, and conversion-oriented.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="projects container reveal">
+            <div class="section-heading">
+                <p class="eyebrow">Selected Work</p>
+                <h2>Sample projects for client presentation</h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-image image-one"></div>
+                    <div class="project-content">
+                        <h3>Business Landing Page</h3>
+                        <p>A high-converting landing page with focused messaging and bold visual hierarchy.</p>
+                        <span class="chip">UI/UX</span>
+                        <span class="chip">Frontend</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image image-two"></div>
+                    <div class="project-content">
+                        <h3>Portfolio Redesign</h3>
+                        <p>Revamped personal brand identity with interactive sections and motion effects.</p>
+                        <span class="chip">Branding</span>
+                        <span class="chip">Web Design</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image image-three"></div>
+                    <div class="project-content">
+                        <h3>Service Showcase Site</h3>
+                        <p>Built a responsive service website optimized for readability and lead generation.</p>
+                        <span class="chip">Responsive</span>
+                        <span class="chip">Performance</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="skills container reveal">
+            <div class="section-heading">
+                <p class="eyebrow">Capabilities</p>
+                <h2>Tools and technologies I use</h2>
+            </div>
+
+            <div class="skills-wrap">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+                <span>Figma</span>
+                <span>Git & GitHub</span>
+                <span>Accessibility</span>
+                <span>UI Animation</span>
+            </div>
+        </section>
+
+        <section id="contact" class="contact container reveal">
+            <div class="contact-card">
+                <p class="eyebrow">Contact</p>
+                <h2>Have a project in mind?</h2>
+                <p>
+                    Let’s collaborate and create something memorable. This section can later include
+                    real phone number, email, and social links.
+                </p>
+                <a href="mailto:hello@example.com" class="btn btn-primary">Email Martin</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Martin Ngeti. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
