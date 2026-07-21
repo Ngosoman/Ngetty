@@ -38,3 +38,96 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach((element) => observer.observe(element));
+
+const slideshow = document.querySelector('.slideshow');
+
+if (slideshow) {
+	const slides = Array.from(slideshow.querySelectorAll('.slide'));
+	const dots = Array.from(slideshow.querySelectorAll('.dot'));
+	const prevButton = slideshow.querySelector('.slide-btn.prev');
+	const nextButton = slideshow.querySelector('.slide-btn.next');
+	let activeIndex = 0;
+	let autoplayTimer;
+
+	const setActiveSlide = (index) => {
+		activeIndex = (index + slides.length) % slides.length;
+
+		slides.forEach((slide, slideIndex) => {
+			slide.classList.toggle('is-active', slideIndex === activeIndex);
+		});
+
+		dots.forEach((dot, dotIndex) => {
+			dot.classList.toggle('is-active', dotIndex === activeIndex);
+			dot.setAttribute('aria-current', dotIndex === activeIndex ? 'true' : 'false');
+		});
+	};
+
+	const startAutoplay = () => {
+		if (slides.length < 2) {
+			return;
+		}
+
+		clearInterval(autoplayTimer);
+		autoplayTimer = setInterval(() => {
+			setActiveSlide(activeIndex + 1);
+		}, 5200);
+	};
+
+	const stopAutoplay = () => {
+		clearInterval(autoplayTimer);
+	};
+
+	if (slides.length > 0) {
+		setActiveSlide(0);
+	}
+
+	if (prevButton) {
+		prevButton.addEventListener('click', () => {
+			setActiveSlide(activeIndex - 1);
+			startAutoplay();
+		});
+	}
+
+	if (nextButton) {
+		nextButton.addEventListener('click', () => {
+			setActiveSlide(activeIndex + 1);
+			startAutoplay();
+		});
+	}
+
+	dots.forEach((dot, index) => {
+		dot.addEventListener('click', () => {
+			setActiveSlide(index);
+			startAutoplay();
+		});
+	});
+
+	slideshow.addEventListener('mouseenter', stopAutoplay);
+	slideshow.addEventListener('mouseleave', startAutoplay);
+	slideshow.addEventListener('focusin', stopAutoplay);
+	slideshow.addEventListener('focusout', startAutoplay);
+
+	slideshow.addEventListener('keydown', (event) => {
+		if (event.key === 'ArrowLeft') {
+			event.preventDefault();
+			setActiveSlide(activeIndex - 1);
+			startAutoplay();
+		}
+
+		if (event.key === 'ArrowRight') {
+			event.preventDefault();
+			setActiveSlide(activeIndex + 1);
+			startAutoplay();
+		}
+	});
+
+	document.addEventListener('visibilitychange', () => {
+		if (document.hidden) {
+			stopAutoplay();
+		} else {
+			startAutoplay();
+		}
+	});
+
+	startAutoplay();
+}
