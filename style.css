@@ -13,6 +13,142 @@
 	--container: min(1140px, 92vw);
 }
 
+/* ===== SPLASHSCREEN ===== */
+
+.splashscreen {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:
+		radial-gradient(circle at 20% 20%, rgba(212, 166, 42, 0.12), transparent 38%),
+		radial-gradient(circle at 80% 80%, rgba(93, 214, 200, 0.10), transparent 34%),
+		linear-gradient(145deg, #050b11 0%, #071018 48%, #09141c 100%);
+	overflow: hidden;
+	transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.splashscreen.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.splash-bg-orb {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(212, 166, 42, 0.15), transparent 70%);
+	filter: blur(80px);
+	animation: splashPulse 4s ease-in-out infinite;
+	pointer-events: none;
+}
+
+@keyframes splashPulse {
+	0%, 100% {
+		transform: translate(-20%, -20%) scale(1);
+		opacity: 0.6;
+	}
+	50% {
+		transform: translate(-10%, -10%) scale(1.15);
+		opacity: 1;
+	}
+}
+
+.splash-content {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	padding: 2rem;
+	animation: splashFadeIn 0.7s ease-out forwards;
+}
+
+@keyframes splashFadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.splash-title {
+	font-family: "Merriweather", serif;
+	font-size: clamp(2.2rem, 6vw, 4rem);
+	font-weight: 700;
+	color: var(--text);
+	margin: 0 0 1.2rem;
+	line-height: 1.15;
+	letter-spacing: 0.02em;
+	background: linear-gradient(135deg, #f0d46a, var(--accent), #f0d46a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.typewriter-cursor {
+	display: inline-block;
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+	color: var(--accent);
+	animation: cursorBlink 0.7s steps(1) infinite;
+	margin-left: 2px;
+	-webkit-text-fill-color: var(--accent);
+}
+
+@keyframes cursorBlink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
+
+.splash-divider {
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+	border-radius: 2px;
+	margin: 0 auto 1.2rem;
+}
+
+.splash-subtitle {
+	font-family: "Merriweather", serif;
+	font-size: clamp(1rem, 2.5vw, 1.5rem);
+	color: var(--text);
+	margin: 0 0 0.3rem;
+	font-weight: 400;
+}
+
+.splash-tagline {
+	font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+	color: var(--muted);
+	margin: 0 0 2rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+}
+
+.splash-bar-track {
+	width: min(220px, 60vw);
+	height: 3px;
+	border-radius: 3px;
+	background: rgba(255, 255, 255, 0.1);
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.splash-bar-fill {
+	width: 0%;
+	height: 100%;
+	border-radius: 3px;
+	background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+	transition: width 0.1s linear;
+}
+
+/* ===== END SPLASHSCREEN ===== */
+
 * {
 	box-sizing: border-box;
 }

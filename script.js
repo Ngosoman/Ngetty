@@ -1,3 +1,69 @@
+/* ===== SPLASHSCREEN ===== */
+
+(function() {
+	const splash = document.getElementById('splashscreen');
+	const bar = document.getElementById('splashBar');
+	const typewriterEl = document.getElementById('typewriterText');
+	const cursorEl = document.getElementById('typewriterCursor');
+	if (!splash || !bar || !typewriterEl || !cursorEl) return;
+
+	const SPLASH_DURATION = 5000; // 5 seconds total
+	const TYPE_DURATION = 4000;   // 4 seconds to type the full text
+	const UPDATE_INTERVAL = 50;   // ms between bar updates
+	const steps = SPLASH_DURATION / UPDATE_INTERVAL;
+	let currentStep = 0;
+
+	// ——— Typewriter effect ———
+	const FULL_TEXT = 'Welcome to my Portfolio';
+	const charInterval = TYPE_DURATION / FULL_TEXT.length; // ~160ms per character
+	let charIndex = 0;
+
+	// Prevent body scroll while splash is visible
+	document.body.style.overflow = 'hidden';
+
+	const typeChar = () => {
+		if (charIndex < FULL_TEXT.length) {
+			typewriterEl.textContent += FULL_TEXT[charIndex];
+			charIndex++;
+			setTimeout(typeChar, charInterval);
+		} else {
+			// Typing complete: hide cursor after a moment
+			setTimeout(() => {
+				cursorEl.style.display = 'none';
+			}, 600);
+		}
+	};
+	typeChar();
+
+	// ——— Progress bar ———
+	const barInterval = setInterval(() => {
+		currentStep++;
+		const pct = Math.min((currentStep / steps) * 100, 100);
+		bar.style.width = pct + '%';
+
+		if (currentStep >= steps) {
+			clearInterval(barInterval);
+		}
+	}, UPDATE_INTERVAL);
+
+	// ——— After full duration, fade out ———
+	setTimeout(() => {
+		clearInterval(barInterval);
+		bar.style.width = '100%';
+		cursorEl.style.display = 'none'; // ensure cursor gone
+
+		splash.classList.add('is-hidden');
+
+		// Restore body scroll after transition
+		setTimeout(() => {
+			document.body.style.overflow = '';
+			splash.setAttribute('aria-hidden', 'true');
+		}, 900);
+	}, SPLASH_DURATION);
+})();
+
+/* ===== END SPLASHSCREEN ===== */
+
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const navAnchors = document.querySelectorAll('.nav-links a');
